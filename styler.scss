@@ -1,4 +1,4 @@
-@import "../theme.scss";
+@import "theme.scss";
 
 @mixin auto_arrange($child_max_width : 300px) {
   display: grid;
