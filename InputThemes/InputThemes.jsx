@@ -41,45 +41,39 @@ class InputTheme2 extends Component{
   }
 }
 
-class InputTheme3 extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      theme_class_name : "input_theme3_container"
-    }
-    // this.inputChange = this.inputChange.bind(this);
-    this.inputFocusIn = this.inputFocusIn.bind(this);
-    this.inputFocusOut = this.inputFocusOut.bind(this);
-  } 
+// class InputTheme3 extends Component{
+//   constructor(props){
+//     super(props);
+//   }
 
-  // inputChange(e){
-  //   console.log(e.target.value);
-  // }
+//   render(){
+//     return(
+//       <div className="input_theme3_container">
+//         <input
+//         autoComplete="off"
+//         placeholder=""
+//         {...this.props.attrs}
+//         />
+//         <div className="input_label">{this.props.label}</div>
+//         <div className="error_message">Invalid</div>
+//       </div>
+//     )
+//   }
+// }
 
-  inputFocusIn(e){
-    this.setState({theme_class_name : "input_theme3_container input_theme3_SELECTED"});
-  }
-
-   inputFocusOut(e){
-    if(e.target.value){
-      return;
-    }
-    this.setState({theme_class_name : "input_theme3_container"});
-  }
-  render(){
-    return(
-      <div className={this.props.attrs.value?"input_theme3_container input_theme3_SELECTED" : this.state.theme_class_name}>
-        <div className="input_label">{this.props.label}</div>
-        <input 
-          autoComplete="off"
-          {...this.props.attrs}
-          onFocus={this.inputFocusIn}
-          onBlur={this.inputFocusOut}
-          />
-      </div>
-    )
-  }
-}
+const InputTheme3 = (props) => {
+  return (
+    <div className="input_theme3_container">
+      <input
+        autoComplete="off"
+        placeholder=""
+        {...props.attrs}
+      />
+      <div className="input_label">{props.label}</div>
+      <div className="error_message">{props.errorMessage}</div>
+    </div>
+  );
+};
 
 class InputTheme4 extends Component{
   constructor(props){
@@ -169,7 +163,7 @@ class TextAreaTheme3 extends Component{
     return(
       <div className={this.props.attrs.value?"textarea_theme3_container textarea_theme3_NOTNULL":"textarea_theme3_container"}>
         <div className="textarea_label" >{this.props.label}</div>
-        <textarea 
+        <textarea
           {...this.props.attrs}
         />
       </div>
