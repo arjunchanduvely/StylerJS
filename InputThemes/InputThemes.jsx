@@ -41,26 +41,6 @@ class InputTheme2 extends Component{
   }
 }
 
-// class InputTheme3 extends Component{
-//   constructor(props){
-//     super(props);
-//   }
-
-//   render(){
-//     return(
-//       <div className="input_theme3_container">
-//         <input
-//         autoComplete="off"
-//         placeholder=""
-//         {...this.props.attrs}
-//         />
-//         <div className="input_label">{this.props.label}</div>
-//         <div className="error_message">Invalid</div>
-//       </div>
-//     )
-//   }
-// }
-
 const InputTheme3 = (props) => {
   return (
     <div className="input_theme3_container">
@@ -109,51 +89,6 @@ class InputTheme4 extends Component{
     )
   }
 }
-
-// const InputTheme3 = (props) => {
-//   const [theme_class_name, setThemeClass] = useState(); 
-//   // console.log(props.value);
-//   // const inputOnChange = (e) => { 
-//   //   setValue(e.target.value);
-//   //   props.parentCallback(e.target.value);
-//   //   // console.log(value);
-//   // }
-//   useEffect(() => {
-//     if(props.value){
-//       console.log("kerii");
-//       setThemeClass("input_theme3_container input_theme3_SELECTED");
-//     }
-//   }); 
-
-//   const inputChange = (e) => {
-//     console.log(e.target.value);
-//   }
-
-//   const inputFocusIn = (e) =>{
-//     setThemeClass("input_theme3_container input_theme3_SELECTED");
-//   }
-
-//    const inputFocusOut = (e) =>{
-//     if(e.target.value){
-//       return;
-//     }
-//     setThemeClass("input_theme3_container");
-//   }
-
-//   return(
-//     <div className={theme_class_name}>
-//       <div className="input_label">{props.label}</div>
-//       <input name=""  
-//         value={props.value} 
-//         onChange={e => { props.onChange(e);inputChange(e);}}  
-//         autoComplete="off"
-//         onFocus={inputFocusIn}
-//         onBlur={inputFocusOut}
-//         />
-//     </div>
-//     )
-// }
-
 
 class TextAreaTheme3 extends Component{
   constructor(props){

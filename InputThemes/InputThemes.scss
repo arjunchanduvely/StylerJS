@@ -83,12 +83,12 @@
     width: 100%;
     height: 54px;
     padding-left: 10px;
-    border: 1px solid #cfcbcb;
+    border: 1px solid $input_blur_border;
     box-sizing: border-box;
 
     border-radius: 5px;
     outline: none;
-    caret-color: $c1-dark;
+    caret-color: $c1-dark; //typing cursor
     background-color: transparent;
     transition: all 0.2s;
   }
@@ -110,21 +110,23 @@
     padding-left: 10px;
     box-sizing: border-box;
 
-    color: #727070;
+    font-weight: 500;
+    color: $input_blur_label;
     pointer-events: none;
     transition: all 150ms;
   }
   
   .error_message{
-    opacity: 0;
+    position: relative;
+    visibility: hidden;
     padding: 5px;
     box-sizing: border-box  ;
-    color: red;
+    color: $input_error_message;
     transition: all 100ms;
   }
 
   input:not(:placeholder-shown) ~ .input_label{
-    color: blue;
+    color: $input_filled_label;
   }
 
   input:not(:placeholder-shown) ~ .input_label,
@@ -138,28 +140,28 @@
   }
 
   input:focus ~ .input_label{
-    color: $c1-dark;
+    color: $input_focus_label;
   }
 
   input:not(:placeholder-shown){
-    border: 2px solid blue;
+    border: 1px solid $input_filled_border;
   }
 
   input:focus{
-    border: 2px solid $c1-dark;
+    border: 2px solid $input_focus_border;
   }
 
   input:invalid{
-    color: red;
-    border: 2px solid red;
+    color: $input_error_content;
+    border: 2px solid $input_error_border;
   }
 
-  input:invalid ~ .input_label,
+  input:invalid ~ .input_label{
+    color: $input_error_label;
+  }
   input:invalid ~ .error_message{
-    color: red;
-    opacity: 1;
+    visibility: visible;
   }
-
 }
 
 .input_theme4_container{
