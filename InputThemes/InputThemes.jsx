@@ -2,23 +2,19 @@ import {useState, useEffect, Component} from "react";
 import "./InputThemes.scss";
 
 
-class InputTheme1 extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-    }
-  } 
-  render(){
-    return(
-      <div className="input_theme1_container">
-        <div className="input_label">{this.props.label}</div>
-        <input
-          autoComplete='off'
-          {...this.props.attrs}
-        />
-      </div>
-    )
-  }
+const InputTheme1 = (props) => {
+  return(
+    <div className="input_theme1_container">
+      {/* <div>boo</div> */}
+      <input
+        autoComplete='off'
+        placeholder=""
+        {...props.attrs}
+      />
+      <div className="input_label">{props.label}</div>
+      <div className="error_message">{props.errorMessage}</div>
+    </div>
+  )
 }
 
 class InputTheme2 extends Component{
@@ -55,39 +51,18 @@ const InputTheme3 = (props) => {
   );
 };
 
-class InputTheme4 extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      theme_class_name : "input_theme4_container"
-    }
-    this.inputFocusIn = this.inputFocusIn.bind(this);
-    this.inputFocusOut = this.inputFocusOut.bind(this);
-  } 
-
-  inputFocusIn(e){
-    this.setState({theme_class_name : "input_theme4_container input_theme4_SELECTED"});
-  }
-
-   inputFocusOut(e){
-    if(e.target.value){
-      return;
-    }
-    this.setState({theme_class_name : "input_theme4_container"});
-  }
-  render(){
-    return(
-      <div className={this.props.attrs.value?"input_theme4_container input_theme4_SELECTED" : this.state.theme_class_name}>
-        <div className="input_label">{this.props.label}</div>
-        <input
-          autoComplete='off'
-          {...this.props.attrs}
-           onFocus={this.inputFocusIn}
-           onBlur={this.inputFocusOut}
-        />
-      </div>
-    )
-  }
+const InputTheme4 = (props) => {
+  return(
+    <div className="input_theme4_container">
+      <input
+        autoComplete='off'
+        placeholder=""
+        {...props.attrs}
+      />
+      <div className="input_label">{props.label}</div>
+      <div className="error_message">{props.errorMessage}</div>
+    </div>
+  )
 }
 
 class TextAreaTheme3 extends Component{
