@@ -1,4 +1,12 @@
 # StylerJS
 
+#### Add as a submodule
 
-create theme.scss from sample after cloning
+````bash
+git submodule add -b main git@github.com:arjunchanduvely/StylerJS.git src/components/StylerJS
+````
+
+#### Create theme.scss
+```bash
+cp src/components/StylerJS/theme.sample.scss src/components/StylerJS/theme.scss
+```
