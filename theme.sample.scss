@@ -1,3 +1,11 @@
+$input_label_background_color: white;
+$input_background_color: white;
+
+$input_margin_top: 0px;
+$input_margin_right: 0px;
+$input_margin_bottom: 0px;
+$input_margin_left: 0px;
+
 $input_focus_border:rgb(26,115,232);
 $input_focus_label:rgb(26,115,232);
 $input_focus_caret:rgb(26,115,255);
@@ -14,10 +22,6 @@ $input_error_message: red;
 $input_blur_border:#cfcbcb;
 $input_blur_label:#727070;
 
-$input_margin_top: 0px;
-$input_margin_right: 0px;
-$input_margin_bottom: 0px;
-$input_margin_left: 0px;
 
 //Input border and label (focus)
 $c1:rgb(26,115,232);
