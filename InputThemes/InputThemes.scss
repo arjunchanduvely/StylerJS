@@ -130,7 +130,7 @@
     border-radius: 5px;
     outline: none;
     caret-color: $input_focus_caret; //typing cursor
-    background-color: transparent;
+    background-color: $input_background_color;
     transition: all 0.2s;
   }
 
@@ -151,6 +151,7 @@
     padding-left: 10px;
     box-sizing: border-box;
 
+    background-color: $input_label_background_color;
     color: $input_blur_label;
     pointer-events: none;
     transition: all 150ms;
@@ -177,7 +178,6 @@
     padding: 0px 5px;
 
     font-size: 12px;
-    background-color: white;
   }
 
   input:focus ~ .input_label{
