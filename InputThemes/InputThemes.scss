@@ -18,7 +18,7 @@
     box-sizing: border-box;
     caret-color: $input_focus_caret;
     border: none;
-    border-bottom: 2px solid rgb(185, 181, 181);
+    border-bottom: 2px solid $input_blur_border;
     outline: none;
     transition: 0.2s all;
   }
@@ -290,16 +290,82 @@
     visibility: visible;
   }
 }
-.input_theme4_SELECTED{
-  border-bottom : 2px solid $c1-dark;
+
+.input_theme5_container{
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: $input_margin_top $input_margin_right $input_margin_bottom $input_margin_left;
+
+  font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+
+  input {
+    position : relative;
+    padding: 0px;
+    width: 100%;
+    height: 54px;
+    margin-top: 22px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    caret-color: $input_focus_caret;
+    border: 2px solid $input_blur_border;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.2s all;
+  }
+
   .input_label{
-    top: -2px;//border size
+    position: absolute;
+    top: 0px;
     left: 0%;
     width: auto;
-    font-size: 12px;
     padding: 0px;
-    color: $c1-dark;
+    box-sizing: border-box;
+
+    // font-size: 12px;
+    color: $input_blur_label;
+    pointer-events: none;
+    transition: all 150ms;
   }
+
+  .error_message{
+    position: relative;
+    visibility: hidden;
+    padding: 5px;
+    box-sizing: border-box  ;
+    color: $input_error_message;
+    transition: all 100ms;
+  }
+
+  input:not(:placeholder-shown) ~ .input_label{
+    color: $input_filled_label;
+  }
+
+  input:focus ~ .input_label{
+    color: $input_focus_label;
+  }
+
+  input:not(:placeholder-shown){
+    border: 1px solid $input_filled_border;
+  }
+
+  input:focus{
+    border: 2px solid $input_focus_border;
+  }
+
+  input:invalid{
+    color: $input_error_content;
+    border: 2px solid $input_error_border;
+    caret-color: $input_error_caret;
+  }
+
+  input:invalid ~ .input_label{
+    color: $input_error_label;
+  }
+  input:invalid ~ .error_message{
+    visibility: visible;
+  }
+
 }
 
 .textarea_theme3_container{

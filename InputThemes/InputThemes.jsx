@@ -65,6 +65,21 @@ const InputTheme4 = (props) => {
   )
 }
 
+const InputTheme5 = (props) => {
+  return(
+    <div className="input_theme5_container">
+      {/* <div>boo</div> */}
+      <input
+        autoComplete='off'
+        placeholder=""
+        {...props.attrs}
+      />
+      <div className="input_label">{props.label}</div>
+      <div className="error_message">{props.errorMessage}</div>
+    </div>
+  )
+}
+
 class TextAreaTheme3 extends Component{
   constructor(props){
     super(props);
@@ -99,6 +114,7 @@ export {
   InputTheme2,
   InputTheme3,
   InputTheme4,
+  InputTheme5,
   TextAreaTheme3,
   SearchBarTheme1
 };
