@@ -4,7 +4,8 @@
   position: relative;
   width: 100%;
   height: auto;
-  margin: 20px 0px;
+  margin: $input_margin_top $input_margin_right $input_margin_bottom $input_margin_left;
+
   font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
 
   input {
@@ -64,6 +65,7 @@
   input:invalid{
     color: $input_error_content;
     border-bottom: 2px solid $input_error_border;
+    caret-color: $input_error_caret;
   }
 
   input:invalid ~ .input_label{
@@ -193,6 +195,7 @@
   input:invalid{
     color: $input_error_content;
     border: 2px solid $input_error_border;
+    caret-color: $input_error_caret;
   }
 
   input:invalid ~ .input_label{
@@ -277,6 +280,7 @@
   input:invalid{
     color: $input_error_content;
     border-bottom: 2px solid $input_error_border;
+    caret-color: $input_error_caret;
   }
 
   input:invalid ~ .input_label{
