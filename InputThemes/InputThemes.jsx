@@ -4,7 +4,7 @@ import "./InputThemes.scss";
 
 const InputTheme1 = (props) => {
   return(
-    <div className="input_theme1_container">
+    <div className={"input_theme1_container "+props.className}>
       {/* <div>boo</div> */}
       <input
         autoComplete='off'
@@ -39,7 +39,7 @@ class InputTheme2 extends Component{
 
 const InputTheme3 = (props) => {
   return (
-    <div className="input_theme3_container">
+    <div className={"input_theme3_container "+props.className}>
       <input
         autoComplete="off"
         placeholder=""
@@ -53,7 +53,7 @@ const InputTheme3 = (props) => {
 
 const InputTheme4 = (props) => {
   return(
-    <div className="input_theme4_container">
+    <div className={"input_theme4_container "+props.className}>
       <input
         autoComplete='off'
         placeholder=""
@@ -67,7 +67,7 @@ const InputTheme4 = (props) => {
 
 const InputTheme5 = (props) => {
   return(
-    <div className="input_theme5_container">
+    <div className={"input_theme5_container "+props.className}>
       {/* <div>boo</div> */}
       <input
         autoComplete='off'

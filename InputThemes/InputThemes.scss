@@ -143,6 +143,7 @@
   // }
 
   .input_label{
+    // 'background-color' overlaps input border
     position: absolute;
     top: 27px;
     left: 0%;
@@ -151,7 +152,6 @@
     padding-left: 10px;
     box-sizing: border-box;
 
-    background-color: $input_label_background_color;
     color: $input_blur_label;
     pointer-events: none;
     transition: all 150ms;
@@ -178,6 +178,7 @@
     padding: 0px 5px;
 
     font-size: 12px;
+    background-color: $input_label_background_color;
   }
 
   input:focus ~ .input_label{
