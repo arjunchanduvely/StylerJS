@@ -65,16 +65,16 @@
     border-bottom: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border-bottom: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 
@@ -199,16 +199,16 @@
     border: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 }
@@ -286,16 +286,16 @@
     border-bottom: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border-bottom: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 }
@@ -364,16 +364,16 @@
     border: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 
