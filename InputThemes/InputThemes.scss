@@ -342,8 +342,9 @@
   .error_message{
     position: relative;
     visibility: hidden;
-    padding: 5px;
-    box-sizing: border-box  ;
+    padding: 0px 0px 0px 5px;
+    box-sizing: border-box;
+
     color: $input_error_message;
     transition: all 100ms;
   }
