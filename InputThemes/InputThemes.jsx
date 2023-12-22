@@ -4,8 +4,7 @@ import "./InputThemes.scss";
 
 const InputTheme1 = (props) => {
   return(
-    <div className={"input_theme1_container "+props.className}>
-      {/* <div>boo</div> */}
+    <div className={"input_theme1_container all_input_containers "+props.className}>
       <input
         autoComplete='off'
         placeholder=""
@@ -67,7 +66,7 @@ const InputTheme4 = (props) => {
 
 const InputTheme5 = (props) => {
   return(
-    <div className={"input_theme5_container "+props.className}>
+    <div className={"input_theme5_container "+(props.className??"")}>
       {/* <div>boo</div> */}
       <input
         autoComplete='off'

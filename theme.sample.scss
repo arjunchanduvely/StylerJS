@@ -1,39 +1,46 @@
-$input_label_font_family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
-$input_label_background_color: white;
-$input_font_family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
 
-$input_background_color: white;
+.all_input_containers{
+  // Specify positioning attributes, like margins, here.
 
-$input_margin_top: 0px;
-$input_margin_right: 0px;
-$input_margin_bottom: 0px;
-$input_margin_left: 0px;
+    input{
+     
+    }
+  
+    .input_label{
 
-$input_focus_border:rgb(26,115,232);
-$input_focus_label:rgb(26,115,232);
-$input_focus_caret:rgb(26,115,255);
+    }
+  
+    .error_message{
+      
+    }
+  
+    input:not(:placeholder-shown){
+      // Input (Filled)
+    }
+  
+    input:not(:placeholder-shown) ~ .input_label{
+      // Input Label (Filled)
+    }
+    
+    input:focus ~ .input_label{
+      // Input Label (On Focus)
+    }
+  
+    input:focus{
+      // Input (On Focus)
+    }
+  
+    input:invalid:not(:placeholder-shown){
+      // Input (Invalid)
+    }
+  
+    input:invalid:not(:placeholder-shown) ~ .input_label{
+      // Input Label (Invalid)
+    }  
+  }
+  
+  // Or change styles for specific elements
 
-$input_filled_border: #77acf1;
-$input_filled_label: #77acf1;
-
-$input_error_border: red;
-$input_error_content: red;
-$input_error_label: red;
-$input_error_caret: red;
-$input_error_message: red;
-
-$input_blur_border:#cfcbcb;
-$input_blur_label:#727070;
-
-//Input border and label (focus)
-$c1:rgb(26,115,232);
-
-//Typing cursor (caret)
-$c1-dark:rgb(26,115,255);
-
-//Input border and label (with content)
-$c1-light: lighten($c1, 20%);
-
-$c2:#cfcbcb;
-$c3-light:#eb05c4;
-$c3:#a21089;
+  .input_theme1_container{
+    //Copy format from above
+  }
