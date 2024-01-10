@@ -1,4 +1,29 @@
-@import "../theme.scss";
+$input_label_font_family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+$input_label_background_color: white;
+$input_font_family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
+
+$input_background_color: white;
+
+$input_margin_top: 0px;
+$input_margin_right: 0px;
+$input_margin_bottom: 0px;
+$input_margin_left: 0px;
+
+$input_focus_border:rgb(26,115,232);
+$input_focus_label:rgb(26,115,232);
+$input_focus_caret:rgb(26,115,255);
+
+$input_filled_border: #77acf1;
+$input_filled_label: #77acf1;
+
+$input_error_border: red;
+$input_error_content: red;
+$input_error_label: red;
+$input_error_caret: red;
+$input_error_message: red;
+
+$input_blur_border:#cfcbcb;
+$input_blur_label:#727070;
 
 .input_theme1_container{
   position: relative;
@@ -16,10 +41,12 @@
     margin-top: 10px;
     padding-left: 10px;
     box-sizing: border-box;
-    caret-color: $input_focus_caret;
     border: none;
     border-bottom: 2px solid $input_blur_border;
     outline: none;
+    
+    font-family: $input_font_family;
+    caret-color: $input_focus_caret;
     transition: 0.2s all;
   }
 
@@ -31,6 +58,7 @@
     padding: 0px;
     box-sizing: border-box;
 
+    font-family: $input_label_font_family;
     // font-size: 12px;
     color: $input_blur_label;
     pointer-events: none;
@@ -46,32 +74,39 @@
     transition: all 100ms;
   }
 
-  input:not(:placeholder-shown) ~ .input_label{
-    color: $input_filled_label;
-  }
-
-  input:focus ~ .input_label{
-    color: $input_focus_label;
-  }
-
   input:not(:placeholder-shown){
+    // Input (Filled)
     border-bottom: 1px solid $input_filled_border;
   }
 
+  input:not(:placeholder-shown) ~ .input_label{
+    // Input Label (Filled)
+    color: $input_filled_label;
+  }
+  
+  input:focus ~ .input_label{
+    // Input Label (On Focus)
+    color: $input_focus_label;
+  }
+
   input:focus{
+    // Input (On Focus)
     border-bottom: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
+    // Input (Invalid)
     color: $input_error_content;
     border-bottom: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
+    // Input Label (Invalid)
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 
@@ -88,7 +123,7 @@
     padding: 0px;
     width: 100%;
     height: 35px;
-    caret-color: $c1-dark;
+    caret-color: $input_focus_caret;
     border: none;
     border-radius: 10px;
     padding-left: 30px;
@@ -108,7 +143,7 @@
     width: 30px;
     height: 95%;
     font-size: 10px;
-    color: $c3;
+    color: black;
   }
 }
 
@@ -129,6 +164,8 @@
 
     border-radius: 5px;
     outline: none;
+
+    font-family: $input_font_family;
     caret-color: $input_focus_caret; //typing cursor
     background-color: $input_background_color;
     transition: all 0.2s;
@@ -143,6 +180,7 @@
   // }
 
   .input_label{
+    // 'background-color' overlaps input border
     position: absolute;
     top: 27px;
     left: 0%;
@@ -151,7 +189,7 @@
     padding-left: 10px;
     box-sizing: border-box;
 
-    background-color: $input_label_background_color;
+    font-family: $input_label_font_family;
     color: $input_blur_label;
     pointer-events: none;
     transition: all 150ms;
@@ -178,6 +216,7 @@
     padding: 0px 5px;
 
     font-size: 12px;
+    background-color: $input_label_background_color;
   }
 
   input:focus ~ .input_label{
@@ -192,16 +231,16 @@
     border: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 }
@@ -221,8 +260,9 @@
     border: none;
     border-bottom: 1px solid $input_blur_border;
     box-sizing: border-box;
-
     outline: none;
+
+    font-family: $input_font_family;
     caret-color: $input_focus_caret; //typing cursor
     background-color: transparent;
     transition: all 0.2s;
@@ -237,6 +277,7 @@
     padding-left: 10px;
     box-sizing: border-box;
 
+    font-family: $input_label_font_family;
     color: $input_blur_label;
     pointer-events: none;
     transition: all 150ms;
@@ -277,16 +318,16 @@
     border-bottom: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border-bottom: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
 }
@@ -297,20 +338,26 @@
   height: auto;
   margin: $input_margin_top $input_margin_right $input_margin_bottom $input_margin_left;
 
-  font-family: roboto,"Noto Sans Myanmar UI",arial,sans-serif;
-
+  
   input {
     position : relative;
     padding: 0px;
     width: 100%;
+<<<<<<< HEAD
     height: 54px;
     margin-top: 26px;
+=======
+    height: 45px;
+    margin-top: 22px;
+>>>>>>> 718eecc42e50d23778d6586a81961259a43af0c6
     padding-left: 10px;
     box-sizing: border-box;
     caret-color: $input_focus_caret;
     border: 1px solid $input_blur_border;
     border-radius: 8px;
     outline: none;
+
+    font-family: $input_font_family;
     transition: 0.2s all;
   }
 
@@ -322,6 +369,7 @@
     padding: 0px;
     box-sizing: border-box;
 
+    font-family: $input_label_font_family;
     // font-size: 12px;
     color: $input_blur_label;
     pointer-events: none;
@@ -331,8 +379,9 @@
   .error_message{
     position: relative;
     visibility: hidden;
-    padding: 5px;
-    box-sizing: border-box  ;
+    padding: 0px 0px 0px 5px;
+    box-sizing: border-box;
+
     color: $input_error_message;
     transition: all 100ms;
   }
@@ -353,113 +402,58 @@
     border: 2px solid $input_focus_border;
   }
 
-  input:invalid{
+  input:invalid:not(:placeholder-shown){
     color: $input_error_content;
     border: 2px solid $input_error_border;
     caret-color: $input_error_caret;
   }
 
-  input:invalid ~ .input_label{
+  input:invalid:not(:placeholder-shown) ~ .input_label{
     color: $input_error_label;
   }
-  input:invalid ~ .error_message{
+  input:invalid:not(:placeholder-shown) ~ .error_message{
     visibility: visible;
   }
-
 }
 
-.textarea_theme3_container{
-  position: relative;
-  width:100%;
-  height: 80px;
-  margin:20px 0px;
-  border:1px solid #cfcbcb;
-  border-radius: 5px;
-  box-sizing: border-box;
+// .search_bar_theme1{
+//   position: sticky;
+//   top:5px;
+//   height: 50px;
+//   width: 400px;
+//   max-width:95%;
+//   z-index: 2020;
 
-  .textarea_label{
-    position: absolute;
-    display: inline-block;
-    background-color: white;
-    top:27%;
-    left: 5px;
-    padding:0px 8px;
-    transform: translate(0%,-50%);
-    transition: all 0.1s;
-    color: #727070;
-  }
+//   margin: 20px auto;
+//   padding-left: 45px;
+//   padding-right: 10px;
+//   box-sizing: border-box;
+//   overflow: hidden;
 
-  textarea{
-    position:relative;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    height: 100%;
-    resize: none;
-    border-radius: 5px;
-    width:100%;
-    padding: 10px;
-    box-sizing: border-box;
-    margin:0px;
-    caret-color: $c1-dark;
-    background-color: transparent;
-  }
+//   border-radius: 55px;
+//   background-color: white;
+//   // box-shadow: 0 0 5px grey;
+//   box-shadow: 0 0 5px darkslategrey;
+//   transition: all 0.2s;
+//   .search_icon{
+//     position: absolute;
+//     top:50%;
+//     left: 25px;
+//     transform: translate(-50%,-50%);
+//   }
+//   input{
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//     // padding-left: 30px;
+//     // border-radius: 5px;
+//     box-sizing: border-box;
+//     border: none;
+//     outline: none;
+//     caret-color: $c1-dark;
+//     background-color: transparent;
+//     // background-color: red;
+//   } 
+// }
 
-  &:focus-within{
-    border:2px solid $c1;
-    .textarea_label{
-      top :0%;
-      font-size: 12px;
-      color: $c1-dark;
-    }
-  }
-}
-
-
-.textarea_theme3_NOTNULL{
-  border-color: black;
-  .textarea_label{
-    top :0%;
-    font-size: 12px;
-    color:black;
-  }
-}
-.search_bar_theme1{
-  position: sticky;
-  top:5px;
-  height: 50px;
-  width: 400px;
-  max-width:95%;
-  z-index: 2020;
-
-  margin: 20px auto;
-  padding-left: 45px;
-  padding-right: 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-
-  border-radius: 55px;
-  background-color: white;
-  // box-shadow: 0 0 5px grey;
-  box-shadow: 0 0 5px darkslategrey;
-  transition: all 0.2s;
-  .search_icon{
-    position: absolute;
-    top:50%;
-    left: 25px;
-    transform: translate(-50%,-50%);
-  }
-  input{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    // padding-left: 30px;
-    // border-radius: 5px;
-    box-sizing: border-box;
-    border: none;
-    outline: none;
-    caret-color: $c1-dark;
-    background-color: transparent;
-    // background-color: red;
-  } 
-}
+@import "../theme.scss";
